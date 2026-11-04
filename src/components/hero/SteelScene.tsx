@@ -1,5 +1,5 @@
 import { useMemo, useRef } from "react";
-import { Canvas, useFrame, type ThreeElements } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, Lightformer } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -58,7 +58,7 @@ function SteelCoil() {
   }, []);
 
   return (
-    <mesh geometry={geometry} castShadow receiveShadow {...props}>
+    <mesh geometry={geometry} castShadow receiveShadow>
       <meshStandardMaterial
         color={STEEL_COLOR}
         metalness={1}
