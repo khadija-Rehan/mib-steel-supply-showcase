@@ -73,7 +73,7 @@ function WhyChooseUsPage() {
           />
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
             {BUSINESS_STRENGTHS.map((strength, i) => {
-              const Icon = STRENGTH_ICONS[i % STRENGTH_ICONS.length];
+              const Icon = STRENGTH_ICONS[i % STRENGTH_ICONS.length] ?? ShieldCheck;
               return (
                 <Reveal key={strength.title} delay={i * 0.1}>
                   <div className="h-full rounded-2xl border border-border bg-card p-7">
