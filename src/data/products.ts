@@ -23,6 +23,12 @@ export interface ProductCategory {
   products: Product[];
   applications?: string[];
   commitment?: string;
+  solarMaterials?: {
+    title: string;
+    items: string[];
+    applicationsTitle: string;
+    applications: string[];
+  };
 }
 
 /**
