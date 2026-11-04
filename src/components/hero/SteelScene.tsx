@@ -21,7 +21,7 @@ class HelixCurve extends THREE.Curve<THREE.Vector3> {
   ) {
     super();
   }
-  getPoint(t: number, optionalTarget = new THREE.Vector3()) {
+  override getPoint(t: number, optionalTarget = new THREE.Vector3()) {
     const angle = t * this.turns * Math.PI * 2;
     return optionalTarget.set(
       Math.cos(angle) * this.radius,
@@ -31,7 +31,7 @@ class HelixCurve extends THREE.Curve<THREE.Vector3> {
   }
 }
 
-function SteelCoil(props: ThreeElements["group"]) {
+function SteelCoil() {
   const geometry = useMemo(() => {
     const shape = new THREE.Shape();
     const w = 0.42; // strip width
