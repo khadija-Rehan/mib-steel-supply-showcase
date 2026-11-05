@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Phone, X } from "lucide-react";
-import mibLogo from "@/assets/mib-logo.png.asset.json";
+import mibLogo from "@/assets/mib-monogram.png.asset.json";
 import { COMPANY } from "@/data/company";
 import { cn } from "@/lib/utils";
 
@@ -46,7 +46,7 @@ export function SiteHeader() {
           <img
             src={mibLogo.url}
             alt="M. Irfan Brothers MIB logo"
-            className="h-12 w-12 shrink-0 object-contain"
+            className="h-14 w-20 shrink-0 object-contain sm:h-16 sm:w-24"
           />
           <span className="hidden flex-col leading-tight sm:flex">
             <span className="font-display text-sm font-bold tracking-wide text-foreground">

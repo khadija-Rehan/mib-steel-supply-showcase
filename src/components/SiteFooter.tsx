@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
-import mibLogo from "@/assets/mib-logo.png.asset.json";
+import mibLogo from "@/assets/mib-monogram.png.asset.json";
 import { COMPANY } from "@/data/company";
 
 const QUICK_LINKS = [
@@ -21,7 +21,7 @@ export function SiteFooter() {
             <img
               src={mibLogo.url}
               alt="M. Irfan Brothers MIB logo"
-              className="h-16 w-16 shrink-0 object-contain"
+              className="h-20 w-32 shrink-0 object-contain"
             />
             <div className="leading-tight">
               <p className="font-display text-base font-bold text-foreground">
