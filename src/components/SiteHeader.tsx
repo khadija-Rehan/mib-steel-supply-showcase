@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Phone, X } from "lucide-react";
-import mibLogo from "@/assets/mib-monogram.png.asset.json";
+import mibLogo from "@/assets/mib-approved-logo.png.asset.json";
 import { COMPANY } from "@/data/company";
 import { cn } from "@/lib/utils";
 
@@ -42,23 +42,15 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:h-18 sm:px-6">
-        <Link to="/" className="flex items-center gap-3" aria-label="M. Irfan Brothers – Home">
+        <Link to="/" className="flex shrink-0 items-center" aria-label="M. Irfan Brothers – Home">
           <img
             src={mibLogo.url}
-            alt="M. Irfan Brothers MIB logo"
-            className="h-14 w-20 shrink-0 object-contain sm:h-16 sm:w-24"
+            alt="Muhammad Irfan Brothers MIB logo"
+            className="h-9 w-[116px] shrink-0 rounded-sm bg-foreground object-contain sm:h-10 sm:w-[132px]"
           />
-          <span className="hidden flex-col leading-tight sm:flex">
-            <span className="font-display text-sm font-bold tracking-wide text-foreground">
-              M. Irfan Brothers
-            </span>
-            <span className="text-[10px] font-medium tracking-[0.22em] text-muted-foreground uppercase">
-              Steel & Industrial Materials
-            </span>
-          </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Main navigation">
           {NAV_LINKS.map((link) => {
             const active =
               link.to === "/" ? pathname === "/" : pathname.startsWith(link.to);
@@ -67,7 +59,7 @@ export function SiteHeader() {
                 key={link.to}
                 to={link.to}
                 className={cn(
-                  "relative rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                  "relative rounded-md px-2 py-2 text-sm font-medium transition-colors xl:px-2.5",
                   active
                     ? "text-primary"
                     : "text-foreground/80 hover:text-foreground",

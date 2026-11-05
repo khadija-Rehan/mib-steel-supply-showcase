@@ -10,8 +10,7 @@ const SteelScene = lazy(() => import("./SteelScene"));
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-[100svh] items-center overflow-hidden">
-      {/* Industrial backdrop */}
+    <section className="relative flex min-h-[90svh] items-center overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={heroBackground}
@@ -21,17 +20,17 @@ export function HeroSection() {
           height={1080}
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-navy-deep/40" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/90 to-navy-deep/35" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-navy-deep/25" />
       </div>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-10 px-4 pt-28 pb-20 sm:px-6 lg:grid-cols-2">
-        <div>
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-5 px-4 pt-28 pb-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-2">
+        <div className="max-w-2xl">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold tracking-[0.25em] text-primary uppercase"
+            className="mb-7 inline-flex items-center gap-3 border-l-2 border-primary pl-4 text-xs font-semibold text-primary uppercase"
           >
             <ShieldCheck className="h-3.5 w-3.5" />
             {COMPANY.tagline}
@@ -41,17 +40,18 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl leading-tight font-bold tracking-tight sm:text-5xl lg:text-6xl"
+            className="max-w-[12ch] text-5xl leading-[1.08] font-bold"
           >
-            <span className="text-foreground">Premium Steel Solutions.</span>{" "}
-            <span className="text-gold-gradient">Built on Trust.</span>
+            <span className="block text-foreground">Premium Steel</span>
+            <span className="block text-foreground">Solutions.</span>
+            <span className="mt-2 block text-gold-gradient">Built on Trust.</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+            className="mt-7 max-w-xl text-base leading-relaxed text-foreground/85 sm:text-lg"
           >
             M. Irfan Brothers delivers quality steel and stainless-steel materials
             for construction, engineering, manufacturing, fabrication, food
@@ -61,7 +61,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.28 }}
-            className="mt-3 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+            className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
           >
             We are committed to quality products, competitive pricing,
             professional services and reliable business relationships.
@@ -71,18 +71,18 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.38 }}
-            className="mt-9 flex flex-wrap gap-4"
+            className="mt-8 flex flex-wrap gap-3"
           >
             <Link
               to="/products"
-              className="group inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-black/30 transition-transform hover:scale-[1.03]"
+              className="group inline-flex min-h-12 items-center gap-3 border border-primary bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-gold-soft"
             >
               Explore Our Products
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-background/40 px-6 py-3 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:border-primary/50 hover:text-primary"
+              className="inline-flex min-h-12 items-center gap-2 border border-foreground/40 bg-background/35 px-6 py-3 text-sm font-semibold text-foreground backdrop-blur transition-colors hover:border-primary hover:text-primary"
             >
               Contact Our Team
             </Link>
@@ -94,7 +94,7 @@ export function HeroSection() {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="relative hidden h-[420px] sm:block lg:h-[540px]"
+          className="relative hidden h-[400px] sm:block lg:h-[550px]"
         >
           <ClientOnly fallback={null}>
             <Suspense fallback={null}>
