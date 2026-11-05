@@ -41,12 +41,12 @@ export function SiteHeader() {
           : "border-b border-transparent bg-transparent",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:h-18 sm:px-6">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:h-20 sm:px-6">
         <Link to="/" className="flex shrink-0 items-center" aria-label="M. Irfan Brothers – Home">
           <img
             src={mibLogo.url}
             alt="Muhammad Irfan Brothers MIB logo"
-            className="h-9 w-[116px] shrink-0 rounded-sm bg-foreground object-contain sm:h-10 sm:w-[132px]"
+            className="h-12 w-[156px] shrink-0 rounded-sm bg-foreground object-contain sm:h-[54px] sm:w-[172px]"
           />
         </Link>
 
