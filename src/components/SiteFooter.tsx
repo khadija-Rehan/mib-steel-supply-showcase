@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import mibLogo from "@/assets/mib-logo.png.asset.json";
 import { COMPANY } from "@/data/company";
 
 const QUICK_LINKS = [
@@ -17,9 +18,11 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-3">
-            <span className="flex h-11 w-11 items-center justify-center rounded-lg border border-primary/40 bg-primary/10 font-display text-sm font-bold tracking-widest text-primary">
-              MIB
-            </span>
+            <img
+              src={mibLogo.url}
+              alt="M. Irfan Brothers MIB logo"
+              className="h-16 w-16 shrink-0 object-contain"
+            />
             <div className="leading-tight">
               <p className="font-display text-base font-bold text-foreground">
                 M. Irfan Brothers (MIB)
