@@ -2,6 +2,13 @@ import { Suspense, lazy } from "react";
 import { ClientOnly } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
+
+const instant = { initial: { opacity: 1, y: 0 }, animate: { opacity: 1, y: 0 } };
+const fadeOnly = (delay = 0) => ({
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.3, delay },
+});
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import heroBackground from "@/assets/hero-industrial.jpg";
 import { COMPANY } from "@/data/company";
@@ -27,9 +34,7 @@ export function HeroSection() {
       <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-5 px-4 pt-28 pb-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-2">
         <div className="max-w-2xl">
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            {...fadeOnly(0)}
             className="mb-7 inline-flex items-center gap-3 border-l-2 border-primary pl-4 text-xs font-semibold text-primary uppercase"
           >
             <ShieldCheck className="h-3.5 w-3.5" />
@@ -37,9 +42,7 @@ export function HeroSection() {
           </motion.p>
 
           <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
+            {...fadeOnly(0.05)}
             className="max-w-[14ch] text-5xl leading-[1.08] font-bold"
           >
             <span className="block text-foreground">Industrial Steel</span>
@@ -48,9 +51,7 @@ export function HeroSection() {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            {...fadeOnly(0.1)}
             className="mt-7 max-w-xl text-base leading-relaxed text-foreground/85 sm:text-lg"
           >
             M. Irfan Brothers delivers quality steel and stainless-steel materials
@@ -58,9 +59,7 @@ export function HeroSection() {
             processing and industrial applications.
           </motion.p>
           <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.28 }}
+            {...fadeOnly(0.12)}
             className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
           >
             We are committed to quality products, competitive pricing,
@@ -68,9 +67,7 @@ export function HeroSection() {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.38 }}
+            {...fadeOnly(0.15)}
             className="mt-8 flex flex-wrap gap-3"
           >
             <Link
@@ -91,9 +88,7 @@ export function HeroSection() {
 
         {/* 3D metallic steel coil scene */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
+          {...fadeOnly(0.2)}
           className="relative hidden h-[400px] sm:block lg:h-[550px]"
         >
           <ClientOnly fallback={null}>
@@ -106,9 +101,7 @@ export function HeroSection() {
 
       {/* Scroll hint */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
+        {...fadeOnly(0.5)}
         className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 sm:block"
         aria-hidden
       >
