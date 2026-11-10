@@ -1,3 +1,4 @@
+import { MapPin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { BrandLogo } from "@/components/BrandLogo";
 import { COMPANY } from "@/data/company";
@@ -85,7 +86,7 @@ export function SiteFooter() {
                 href={COMPANY.emailHref}
                 className="flex items-center gap-3 break-all text-muted-foreground transition-colors hover:text-primary"
               >
-                <Mail className="h-4 w-4 shrink-0 text-primary" />
+
                 {COMPANY.email}
               </a>
             </li>
