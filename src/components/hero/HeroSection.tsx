@@ -46,7 +46,7 @@ export function HeroSection() {
             className="max-w-[14ch] text-5xl leading-[1.08] font-bold"
           >
             <span className="block text-foreground">Industrial Steel</span>
-            <span className="block text-foreground">Supply.</span>
+            <span className="block text-foreground">Supply</span>
             <span className="mt-2 block text-gold-gradient">Forged in Trust.</span>
           </motion.h1>
 

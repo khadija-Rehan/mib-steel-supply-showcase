@@ -32,6 +32,18 @@ export function SiteHeader() {
     setOpen(false);
   }, [pathname]);
 
+  // Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [open]);
+
   return (
     <header
       className={cn(
@@ -74,19 +86,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link
-            to="/contact"
-            className="hidden rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-md shadow-black/30 transition-transform hover:scale-[1.03] sm:inline-flex"
-          >
-            Get a Quote
-          </Link>
-          <a
-            href={COMPANY.phoneHref}
-            className="hidden rounded-lg border border-border p-2 text-foreground/80 transition-colors hover:text-primary md:inline-flex"
-            aria-label={`Call ${COMPANY.phoneDisplay}`}
-          >
-            <Phone className="h-4 w-4" />
-          </a>
+
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -102,25 +102,34 @@ export function SiteHeader() {
       <AnimatePresence>
         {open ? (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.25 }}
-            className="glass-panel overflow-hidden border-t lg:hidden"
+            className="fixed inset-y-0 right-0 z-50 w-3/4 max-w-sm bg-background shadow-lg glass-panel overflow-hidden border-l lg:hidden"
           >
-            <nav className="flex flex-col px-4 py-3" aria-label="Mobile navigation">
+            <nav className="flex flex-col h-full p-4" aria-label="Mobile navigation">
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                className="self-end mb-4 rounded-lg p-2 text-foreground"
+                aria-label="Close menu"
+              >
+                <X className="h-5 w-5" />
+              </button>
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className="rounded-md px-3 py-2.5 text-sm font-medium text-foreground/90 transition-colors hover:bg-accent hover:text-accent-foreground"
+                  className="mb-3 rounded-md px-3 py-2.5 text-sm font-medium text-foreground/90 transition-colors hover:bg-accent hover:text-accent-foreground"
+                  onClick={() => setOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
               <Link
                 to="/contact"
-                className="mt-2 rounded-lg bg-primary px-4 py-2.5 text-center text-sm font-semibold text-primary-foreground"
+                className="mt-auto rounded-lg bg-primary px-4 py-2.5 text-center text-sm font-semibold text-primary-foreground"
               >
                 Get a Quote
               </Link>

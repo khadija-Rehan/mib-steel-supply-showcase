@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
 import { COMPANY } from "@/data/company";
 
@@ -66,7 +65,7 @@ export function SiteFooter() {
                 href={COMPANY.phoneHref}
                 className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary"
               >
-                <Phone className="h-4 w-4 shrink-0 text-primary" />
+
                 {COMPANY.phoneDisplay}
               </a>
             </li>
@@ -77,7 +76,7 @@ export function SiteFooter() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary"
               >
-                <MessageCircle className="h-4 w-4 shrink-0 text-primary" />
+
                 WhatsApp: {COMPANY.phoneDisplay}
               </a>
             </li>
