@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
-import mibLogo from "@/assets/mib-approved-logo.png.asset.json";
+import { BrandLogo } from "@/components/BrandLogo";
 import { COMPANY } from "@/data/company";
 
 const QUICK_LINKS = [
@@ -18,16 +18,14 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">
         <div>
           <div className="flex flex-col items-start gap-3">
-            <img
-              src={mibLogo.url}
-              alt="Muhammad Irfan Brothers MIB logo"
-              className="h-[58px] w-[186px] rounded-sm bg-foreground object-contain"
-            />
+            <Link to="/" aria-label="Muhammad Irfans Brothers – Home">
+              <BrandLogo
+                iconClassName="h-10 sm:h-11"
+                textClassName="text-[13px] sm:text-sm"
+              />
+            </Link>
             <div className="leading-tight">
-              <p className="font-display text-base font-bold text-foreground">
-                M. Irfan Brothers (MIB)
-              </p>
-              <p className="text-[11px] text-muted-foreground">
+              <p className="text-xs text-muted-foreground">
                 Steel Trading & Industrial Material Supply
               </p>
             </div>

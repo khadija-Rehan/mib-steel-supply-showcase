@@ -40,11 +40,11 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="max-w-[12ch] text-5xl leading-[1.08] font-bold"
+            className="max-w-[14ch] text-5xl leading-[1.08] font-bold"
           >
-            <span className="block text-foreground">Premium Steel</span>
-            <span className="block text-foreground">Solutions.</span>
-            <span className="mt-2 block text-gold-gradient">Built on Trust.</span>
+            <span className="block text-foreground">Industrial Steel</span>
+            <span className="block text-foreground">Supply.</span>
+            <span className="mt-2 block text-gold-gradient">Forged in Trust.</span>
           </motion.h1>
 
           <motion.p

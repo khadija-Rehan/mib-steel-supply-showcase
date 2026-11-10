@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Phone, X } from "lucide-react";
-import mibLogo from "@/assets/mib-approved-logo.png.asset.json";
+import { BrandLogo } from "@/components/BrandLogo";
 import { COMPANY } from "@/data/company";
 import { cn } from "@/lib/utils";
 
@@ -42,12 +42,8 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:h-20 sm:px-6">
-        <Link to="/" className="flex shrink-0 items-center" aria-label="M. Irfan Brothers – Home">
-          <img
-            src={mibLogo.url}
-            alt="Muhammad Irfan Brothers MIB logo"
-            className="h-12 w-[156px] shrink-0 rounded-sm bg-foreground object-contain sm:h-[54px] sm:w-[172px]"
-          />
+        <Link to="/" className="flex shrink-0 items-center" aria-label="Muhammad Irfans Brothers – Home">
+          <BrandLogo />
         </Link>
 
         <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Main navigation">
