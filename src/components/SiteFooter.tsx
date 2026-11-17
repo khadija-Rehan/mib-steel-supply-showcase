@@ -1,5 +1,6 @@
-import { MapPin } from "lucide-react";
+
 import { Link } from "@tanstack/react-router";
+
 import { BrandLogo } from "@/components/BrandLogo";
 import { COMPANY } from "@/data/company";
 
@@ -97,7 +98,7 @@ export function SiteFooter() {
                 rel="noopener noreferrer"
                 className="flex items-start gap-3 text-muted-foreground transition-colors hover:text-primary"
               >
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+
                 <span>
                   {COMPANY.addressLines.map((line) => (
                     <span key={line} className="block">

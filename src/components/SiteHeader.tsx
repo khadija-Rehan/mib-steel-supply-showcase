@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, Phone, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
 import { COMPANY } from "@/data/company";
 import { cn } from "@/lib/utils";
@@ -45,14 +45,13 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled
-          ? "glass-panel border-b shadow-lg shadow-black/20"
-          : "border-b border-transparent bg-transparent",
-      )}
-    >
+    <header className={cn(
+      "fixed inset-x-0 top-0 z-70 w-full transition-all duration-500 bg-background",
+      scrolled
+        ? "border-b shadow-lg shadow-black/20"
+        : "border-b border-transparent",
+
+    )}>
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:h-20 sm:px-6">
         <Link to="/" className="flex shrink-0 items-center" aria-label="Muhammad Irfans Brothers – Home">
           <BrandLogo />
@@ -86,11 +85,10 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="rounded-lg border border-border p-2 text-foreground lg:hidden"
+            className="rounded-lg border border-border p-2 text-foreground z-50 lg:hidden"
             aria-expanded={open}
             aria-label={open ? "Close menu" : "Open menu"}
           >
@@ -100,42 +98,52 @@ export function SiteHeader() {
       </div>
 
       <AnimatePresence>
-        {open ? (
-          <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-y-0 right-0 z-50 w-3/4 max-w-sm bg-background shadow-lg glass-panel overflow-hidden border-l lg:hidden"
-          >
-            <nav className="flex flex-col h-full p-4" aria-label="Mobile navigation">
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                className="self-end mb-4 rounded-lg p-2 text-foreground"
-                aria-label="Close menu"
-              >
-                <X className="h-5 w-5" />
-              </button>
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className="mb-3 rounded-md px-3 py-2.5 text-sm font-medium text-foreground/90 transition-colors hover:bg-accent hover:text-accent-foreground"
+        {open && (
+          <>
+            <motion.div
+              className="fixed inset-x-0 top-16 bottom-0 bg-black/30 z-40"
+              onClick={() => setOpen(false)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            />
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "tween", duration: 0.25 }}
+              className="fixed top-16 right-0 h-[calc(100%-4rem)] w-3/4 max-w-sm bg-background shadow-lg glass-panel overflow-hidden border-l"
+            >
+              <nav className="flex flex-col h-full p-4" aria-label="Mobile navigation">
+                <button
+                  type="button"
                   onClick={() => setOpen(false)}
+                  className="self-end mb-4 rounded-lg p-2 text-foreground"
+                  aria-label="Close menu"
                 >
-                  {link.label}
+                  <X className="h-5 w-5" />
+                </button>
+                {NAV_LINKS.map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className="mb-3 rounded-md px-3 py-2.5 text-sm font-medium text-foreground/90 transition-colors hover:bg-accent hover:text-accent-foreground"
+                    onClick={() => setOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <Link
+                  to="/contact"
+                  className="mt-auto rounded-lg bg-primary px-4 py-2.5 text-center text-sm font-semibold text-primary-foreground"
+                >
+                  Get a Quote
                 </Link>
-              ))}
-              <Link
-                to="/contact"
-                className="mt-auto rounded-lg bg-primary px-4 py-2.5 text-center text-sm font-semibold text-primary-foreground"
-              >
-                Get a Quote
-              </Link>
-            </nav>
-          </motion.div>
-        ) : null}
+              </nav>
+            </motion.div>
+          </>
+        )}
       </AnimatePresence>
     </header>
   );

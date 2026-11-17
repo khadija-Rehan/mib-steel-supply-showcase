@@ -5,7 +5,10 @@ import { Check, ListChecks } from "lucide-react";
 import { PageHero } from "@/components/PageHero";
 import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
-import { CATEGORY_A, CATEGORY_B, CATEGORY_C, PRODUCT_FILTERS } from "@/data/products";
+import {
+  PRODUCT_CATEGORIES,
+  PRODUCT_FILTERS,
+} from "@/data/products";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/products")({
@@ -36,7 +39,7 @@ export const Route = createFileRoute("/products")({
 function ProductsPage() {
   const [filter, setFilter] = useState<string>("all");
 
-  const visibleCategories = [CATEGORY_A, CATEGORY_B, CATEGORY_C].filter(
+  const visibleCategories = PRODUCT_CATEGORIES.filter(
     (c) => filter === "all" || c.id === filter,
   );
 

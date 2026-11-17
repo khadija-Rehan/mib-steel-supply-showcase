@@ -8,6 +8,15 @@ import steelPipes from "@/assets/steel-pipes.jpg";
 import structuralSteel from "@/assets/structural-steel.jpg";
 import roofingSheets from "@/assets/roofing-sheets.jpg";
 import solarMounting from "@/assets/solar-mounting.jpg";
+import fabrication from "@/assets/fabrication.jpg";
+import foodProcessing from "@/assets/food-processing.jpg";
+import manufacturing from "@/assets/manufacturing.jpg";
+
+import img1 from "@/assets/img1.jpeg";
+import img2 from "@/assets/img2.jpeg";
+import img3 from "@/assets/img3.jpeg";
+import img4 from "@/assets/img4.jpeg";
+import img5 from "@/assets/img5.jpeg";
 
 export interface Product {
   name: string;
@@ -55,7 +64,7 @@ export const CATEGORY_A: ProductCategory = {
       name: "Hot Rolled Sheets (HR)",
       description:
         "Hot Rolled Sheets are commonly used in construction, industrial production, structural fabrication and engineering applications.",
-      image: steelSheets,
+      image: msPlates,
     },
     {
       name: "Galvanized Iron Sheets (GI)",
@@ -79,7 +88,7 @@ export const CATEGORY_A: ProductCategory = {
       name: "PPGL – Pre-Painted Galvalume",
       description:
         "PPGL sheets provide a pre-painted finish over a galvalume-coated steel base.",
-      image: ppgiColorCoated,
+      image: img3,
     },
     {
       name: "GI Z-275 & AZ-150",
@@ -97,7 +106,7 @@ export const CATEGORY_A: ProductCategory = {
       name: "Imported Steel Materials",
       description:
         "We deal in imported steel sheets and coils according to customer specifications and market availability.",
-      image: steelCoils,
+      image: manufacturing,
     },
   ],
 };
@@ -122,19 +131,19 @@ export const CATEGORY_B: ProductCategory = {
       name: "Stainless Steel Grade 204",
       description:
         "Grade 204 is a lower-nickel austenitic stainless-steel grade used in selected fabrication and industrial applications.",
-      image: stainlessSteelSheets,
+      image: fabrication,
     },
     {
       name: "Stainless Steel Grade 304 – Food Grade",
       description:
         "Grade 304 is a widely used stainless steel grade known for its corrosion resistance, formability and suitability for many food-processing and food-contact applications.",
-      image: stainlessSteelSheets,
+      image: foodProcessing,
     },
     {
       name: "Stainless Steel Grade 316 – Food & Industrial Grade",
       description:
         "Grade 316 offers enhanced corrosion resistance due to its molybdenum content. It is commonly used in food processing, chemical processing, marine and demanding industrial environments.",
-      image: stainlessSteelSheets,
+      image: steelSheets,
     },
   ],
   applications: [
@@ -177,7 +186,7 @@ export const CATEGORY_C: ProductCategory = {
       name: "Corrugated Sheets – All Sizes",
       description:
         "Corrugated steel sheets are widely used for industrial roofing, warehouses, factory sheds and commercial structures.",
-      image: roofingSheets,
+      image: img2,
     },
     {
       name: "Profile Sheets – All Sizes",
@@ -207,10 +216,49 @@ export const CATEGORY_C: ProductCategory = {
   },
 };
 
+/**
+ * CATEGORY D — FABRICATED & CUSTOM PRODUCTS
+ */
+export const CATEGORY_D: ProductCategory = {
+  id: "fabricated-custom",
+  label: "Fabricated & Custom Products",
+  title: "Category D: Fabricated & Custom Products",
+  intro:
+    "Custom steel fabrication, ducting, rolling shutters and cooling unit solutions manufactured to client specifications.",
+  products: [
+    {
+      name: "Industrial Air Cooler",
+      description: "Heavy-duty sheet metal desert air coolers designed for industrial and commercial cooling.",
+      image: img1,
+    },
+    {
+      name: "Corrugated Roofing Sheets",
+      description: "Galvanized corrugated sheets manufactured for durable weather-resistant industrial roofing.",
+      image: img2,
+    },
+    {
+      name: "Color Coated Profile Panels",
+      description: "Precision-engineered white coated trapezoidal profile sheets for modern architectural sheds.",
+      image: img3,
+    },
+    {
+      name: "HVAC Ducting & Bends",
+      description: "Custom galvanized ductwork, bends and airflow ventilation systems for factories and warehouses.",
+      image: img4,
+    },
+    {
+      name: "Galvanized Rolling Shutters",
+      description: "Heavy-duty motorized and manual rolling steel shutters for warehouse security and shopfronts.",
+      image: img5,
+    },
+  ],
+};
+
 export const PRODUCT_CATEGORIES: ProductCategory[] = [
   CATEGORY_A,
   CATEGORY_B,
   CATEGORY_C,
+  CATEGORY_D,
 ];
 
 export const PRODUCT_FILTERS = [
