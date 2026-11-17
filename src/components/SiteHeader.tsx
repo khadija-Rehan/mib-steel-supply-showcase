@@ -99,9 +99,9 @@ export function SiteHeader() {
 
       <AnimatePresence>
         {open && (
-          <>
+          <div className="fixed inset-0 z-50 lg:hidden">
             <motion.div
-              className="fixed inset-x-0 top-16 bottom-0 bg-black/30 z-40"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm"
               onClick={() => setOpen(false)}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -113,36 +113,53 @@ export function SiteHeader() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.25 }}
-              className="fixed top-16 right-0 h-[calc(100%-4rem)] w-3/4 max-w-sm bg-background shadow-lg glass-panel overflow-hidden border-l"
+              className="fixed top-0 right-0 z-50 h-full w-4/5 max-w-sm bg-background/95 backdrop-blur-md shadow-2xl overflow-y-auto border-l border-border"
             >
-              <nav className="flex flex-col h-full p-4" aria-label="Mobile navigation">
-                <button
-                  type="button"
-                  onClick={() => setOpen(false)}
-                  className="self-end mb-4 rounded-lg p-2 text-foreground"
-                  aria-label="Close menu"
-                >
-                  <X className="h-5 w-5" />
-                </button>
-                {NAV_LINKS.map((link) => (
+              <nav className="flex flex-col min-h-full p-6" aria-label="Mobile navigation">
+                <div className="flex items-center justify-between pb-6 mb-4 border-b border-border">
+                  <span className="font-semibold text-foreground text-sm tracking-wide uppercase">Menu</span>
+                  <button
+                    type="button"
+                    onClick={() => setOpen(false)}
+                    className="rounded-lg p-2 text-foreground/80 hover:text-foreground hover:bg-accent transition-colors"
+                    aria-label="Close menu"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
+                <div className="flex flex-col gap-1">
+                  {NAV_LINKS.map((link) => {
+                    const active =
+                      link.to === "/" ? pathname === "/" : pathname.startsWith(link.to);
+                    return (
+                      <Link
+                        key={link.to}
+                        to={link.to}
+                        className={cn(
+                          "rounded-lg px-4 py-3 text-base font-medium transition-colors",
+                          active
+                            ? "bg-primary/10 text-primary font-semibold"
+                            : "text-foreground/90 hover:bg-accent hover:text-foreground"
+                        )}
+                        onClick={() => setOpen(false)}
+                      >
+                        {link.label}
+                      </Link>
+                    );
+                  })}
+                </div>
+                <div className="mt-auto pt-8">
                   <Link
-                    key={link.to}
-                    to={link.to}
-                    className="mb-3 rounded-md px-3 py-2.5 text-sm font-medium text-foreground/90 transition-colors hover:bg-accent hover:text-accent-foreground"
+                    to="/contact"
+                    className="block w-full rounded-xl bg-primary py-3.5 text-center text-sm font-semibold text-primary-foreground shadow-lg hover:bg-primary/90 transition-colors"
                     onClick={() => setOpen(false)}
                   >
-                    {link.label}
+                    Get a Quote
                   </Link>
-                ))}
-                <Link
-                  to="/contact"
-                  className="mt-auto rounded-lg bg-primary px-4 py-2.5 text-center text-sm font-semibold text-primary-foreground"
-                >
-                  Get a Quote
-                </Link>
+                </div>
               </nav>
             </motion.div>
-          </>
+          </div>
         )}
       </AnimatePresence>
     </header>
