@@ -86,7 +86,7 @@ export function HeroSection() {
           </motion.div>
         </div>
 
-        {/* 3D metallic steel coil scene */}
+        {/* 3D Galvanized Iron (GI) Steel Coil Scene */}
         <motion.div
           {...fadeOnly(0.2)}
           className="relative hidden h-[400px] sm:block lg:h-[550px]"

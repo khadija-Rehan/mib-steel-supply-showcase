@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight, BadgeCheck, Check } from "lucide-react";
-import steelCoils from "@/assets/steel-coils.jpg";
+import giCoil from "@/assets/gi-coils.jpg";
 import stainlessSheets from "@/assets/stainless-steel-sheets.jpg";
 import steelPipes from "@/assets/steel-pipes.jpg";
 import { HeroSection } from "@/components/hero/HeroSection";
@@ -45,7 +45,7 @@ export const Route = createFileRoute("/")({
 });
 
 const CATEGORY_CARDS = [
-  { category: CATEGORY_A, image: steelCoils },
+  { category: CATEGORY_A, image: giCoil },
   { category: CATEGORY_B, image: stainlessSheets },
   { category: CATEGORY_C, image: steelPipes },
 ];

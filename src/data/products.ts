@@ -1,4 +1,4 @@
-import steelCoils from "@/assets/steel-coils.jpg";
+import giCoil from "@/assets/gi-coils.jpg";
 import steelSheets from "@/assets/steel-sheets.jpg";
 import galvanizedSheets from "@/assets/galvanized-sheets.jpg";
 import msPlates from "@/assets/ms-plates.jpg";
@@ -49,10 +49,10 @@ export const CATEGORY_A: ProductCategory = {
   title: "Category A: Steel Sheets, Coils & Plates",
   products: [
     {
-      name: "Hot Rolled Coils (HRC)",
+      name: "Galvanized Iron Coils (GI Coils)",
       description:
-        "Hot Rolled Coils are widely used in structural fabrication, industrial manufacturing, engineering and various steel processing applications.",
-      image: steelCoils,
+        "High-grade Galvanized Iron Coils offering superior corrosion resistance and surface finish for industrial and fabrication applications.",
+      image: giCoil,
     },
     {
       name: "Cold Rolled Sheets (CR)",
@@ -95,12 +95,6 @@ export const CATEGORY_A: ProductCategory = {
       description:
         "We also deal in specialized coated steel materials, including Z-275 galvanized and AZ-150 aluminum-zinc coated sheets.",
       image: galvanizedSheets,
-    },
-    {
-      name: "Steel Coils",
-      description:
-        "Steel coils are available for various manufacturing, processing and fabrication requirements.",
-      image: steelCoils,
     },
     {
       name: "Imported Steel Materials",
