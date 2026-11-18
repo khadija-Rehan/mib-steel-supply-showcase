@@ -55,7 +55,7 @@ export const WHO_WE_ARE = [
 export const BUSINESS_ACTIVITIES = [
   "Trading and supply of steel sheets and coils.",
   "Hot Rolled (HR) and Cold Rolled (CR) materials.",
-  "Galvanized Iron (GI) sheets.",
+  "Galvanized Iron (GI) sheets Z-275.",
   "Stainless Steel (SS) sheets and materials.",
   "MS plates and MS pipes.",
   "PPGI, PPGL and color-coated sheets.",
@@ -150,7 +150,7 @@ export const BUSINESS_ASSOCIATES = [
   "Mechatech House",
   "Captive Aire",
   "AR Corporation",
-  "Pak Pioneers Engineering",
+  "Pak Premier Engineering",
   "AG Engineerings",
   "Khursheed Engineerings",
   "MepCone",

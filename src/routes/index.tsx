@@ -5,6 +5,7 @@ import { ArrowRight, BadgeCheck, Check } from "lucide-react";
 import giCoil from "@/assets/gi-coils.jpg";
 import stainlessSheets from "@/assets/stainless-steel-sheets.jpg";
 import steelPipes from "@/assets/steel-pipes.jpg";
+import giZ275Banner from "@/assets/gi-z275-banner.jpg";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -93,7 +94,7 @@ function Index() {
 
           <Reveal delay={0.1} className="grid grid-cols-2 gap-4">
             <div className="rounded-2xl border border-border overflow-hidden">
-              <img src={steelCoils} alt="Steel coils" loading="lazy" width={1280} height={854} className="h-40 w-full object-cover sm:h-56" />
+              <img src={giCoil} alt="GI Steel coils" loading="lazy" width={1280} height={854} className="h-40 w-full object-cover sm:h-56" />
             </div>
             <div className="rounded-2xl border border-border overflow-hidden mt-8">
               <img src={stainlessSheets} alt="Stainless steel sheets" loading="lazy" width={1280} height={854} className="h-40 w-full object-cover sm:h-56" />
@@ -101,11 +102,8 @@ function Index() {
             <div className="rounded-2xl border border-border overflow-hidden">
               <img src={steelPipes} alt="MS pipes" loading="lazy" width={1280} height={854} className="h-40 w-full object-cover sm:h-56" />
             </div>
-            <div className="glass-panel mt-8 flex flex-col justify-center rounded-2xl p-5">
-              <p className="font-display text-2xl font-bold text-primary">{COMPANY.shortName}</p>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Premium Quality. Nationwide Service. Trusted Partnerships.
-              </p>
+            <div className="rounded-2xl border border-border overflow-hidden mt-8">
+              <img src={giZ275Banner} alt="GI Z275 All Gauges Available" loading="lazy" width={1280} height={854} className="h-40 w-full object-cover sm:h-56" />
             </div>
           </Reveal>
         </div>

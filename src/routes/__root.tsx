@@ -144,7 +144,7 @@ function RootComponent() {
           <Outlet />
         </div>
         <SiteFooter />
-        <FloatingContact />
+        {/* Floating quick contact buttons removed as requested */}
       </div>
     </QueryClientProvider>
   );

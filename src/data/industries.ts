@@ -1,5 +1,5 @@
 import structuralSteel from "@/assets/structural-steel.jpg";
-import manufacturing from "@/assets/manufacturing.jpg";
+import colorCoilProfile from "@/assets/color-coil-profile.jpg";
 import foodProcessing from "@/assets/food-processing.jpg";
 import fabrication from "@/assets/fabrication.jpg";
 import solarMounting from "@/assets/solar-mounting.jpg";
@@ -21,10 +21,10 @@ export const INDUSTRIES: Industry[] = [
     image: structuralSteel,
   },
   {
-    name: "Engineering & Manufacturing",
+    name: "Color Coils & Profiles",
     description:
-      "HR coils, CR sheets, steel plates, pipes and stainless-steel materials for industrial manufacturing.",
-    image: manufacturing,
+      "Color-coated steel coils, trapezoidal profiles, corrugated roofing and cladding materials for industrial and commercial structures.",
+    image: colorCoilProfile,
   },
   {
     name: "Food Processing Industry",

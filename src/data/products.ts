@@ -11,6 +11,7 @@ import solarMounting from "@/assets/solar-mounting.jpg";
 import fabrication from "@/assets/fabrication.jpg";
 import foodProcessing from "@/assets/food-processing.jpg";
 import manufacturing from "@/assets/manufacturing.jpg";
+import giZ275Coils from "@/assets/gi-z275-coils.jpg";
 
 import img1 from "@/assets/img1.jpeg";
 import img2 from "@/assets/img2.jpeg";
@@ -85,16 +86,16 @@ export const CATEGORY_A: ProductCategory = {
       image: ppgiColorCoated,
     },
     {
-      name: "PPGL – Pre-Painted Galvalume",
+      name: "PPGL – Pre-Painted Galvalume AZ-150",
       description:
         "PPGL sheets provide a pre-painted finish over a galvalume-coated steel base.",
       image: img3,
     },
     {
-      name: "GI Z-275 & AZ-150",
+      name: "GI Z-275",
       description:
-        "We also deal in specialized coated steel materials, including Z-275 galvanized and AZ-150 aluminum-zinc coated sheets.",
-      image: galvanizedSheets,
+        "We deal in specialized coated steel materials, including Z-275 galvanized coils and AZ-150 aluminum-zinc coated materials in all gauges.",
+      image: giZ275Coils,
     },
     {
       name: "Imported Steel Materials",
